@@ -1,0 +1,9 @@
+span.error-message{
+    color: red;
+    font-size: 14px;
+    font-style: italic;
+}
+
+.table td, .table th{
+    vertical-align: middle;
+}
