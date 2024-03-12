@@ -28,14 +28,7 @@ class MenuService
         return true;
     }
 
-    public function getParent(){
-        return Menu::where('parent_id',0)->get();
-    }
-
-    public function getAll(){
-        return Menu::orderBy('id')->simplePaginate(10);
-    }
-
+    
     public function destroy($request){
         $id = $request->input('id');
         $menu = Menu::where('id', $id)->first();
@@ -44,5 +37,29 @@ class MenuService
         };
         return false;
     }
+    
+    public function update($request,$id){
+        try {
+            $id->name = $request->input('name');
+            $id->parent_id = $request->input('parent_id');
+            $id->description = $request->input('description');
+            $id->active = $request->input('active');
+            $id->content = $request->input('content');
+            $id->slug = Str::slug($request->input('name'));
+            $id->save();
+            $request->session()->flash('success', 'Sửa danh mục thành công !');
+        } catch (\Throwable $th) {
+            $request->session()->flash('error', $th->getMessage());
+            return false;
+        }
+        return true;
+    }
+    
+    public function getParent(){
+        return Menu::where('parent_id',0)->get();
+    }
 
+    public function getAll(){
+        return Menu::orderBy('id')->simplePaginate(10);
+    }
 }

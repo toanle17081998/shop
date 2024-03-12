@@ -31,6 +31,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
         Route::get('/add', [MenuController::class,'create'] )->name('admin.menu.create');
         Route::post('/add/store', [MenuController::class,'store'] )->name('admin.menu.stote');
         Route::get('/edit/{id}', [MenuController::class,'edit'] )->name('admin.menu.edit');
+        Route::post('/update/{id}', [MenuController::class,'update'] )->name('admin.menu.update');
         Route::delete('/destroy/{id}', [MenuController::class,'destroy'] )->name('admin.menu.destroy');
     });
 });

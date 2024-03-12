@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\Menu\CreateMenuRequest;
+use App\Http\Requests\Admin\Menu\UpdateMenuRequest;
 use Illuminate\Http\Request;
 use App\Http\Services\Admin\Menu\MenuService;
+use App\Models\Menu;
 
 class MenuController extends Controller
 {
@@ -46,5 +48,18 @@ class MenuController extends Controller
             'error' => true,
             'message' => 'Xoá k thành công'
         ]);
+    }
+
+    public function edit(Menu $id){
+        return view('Admin.Menus.edit',[
+            'title'=>'Sửa danh mục: '.$id->name,
+            'menuCurrent'=> $id,
+            'menus'=> $this->menuService->getParent()
+        ]);
+    }
+
+    public function update(Menu $id , UpdateMenuRequest $request){
+        $result = $this->menuService->update($request,$id);
+        return redirect()->back();
     }
 }

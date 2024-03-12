@@ -3,9 +3,8 @@
 namespace App\Http\Requests\Admin\Menu;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
 
-class CreateMenuRequest extends FormRequest
+class UpdateMenuRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,11 +22,8 @@ class CreateMenuRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required|unique:menus|string|max:255',
+            'name' => 'required|string|max:255',
             'description' => 'required|string|max:255',
-
         ];
     }
-
-
 }
