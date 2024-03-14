@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Product extends Model
 {
@@ -18,4 +19,8 @@ class Product extends Model
         'price',
         'price_sale',
     ];
+
+    public function menu(){ 
+        return $this->hasOne(Menu::class,'id','menu_id');
+    }
 }

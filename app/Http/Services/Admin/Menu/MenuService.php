@@ -59,6 +59,10 @@ class MenuService
         return Menu::where('parent_id',0)->get();
     }
 
+    public function getAllMenu(){
+        return Menu::all();
+    }
+
     public function getAll(){
         return Menu::orderBy('id')->simplePaginate(10);
     }
