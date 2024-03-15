@@ -84,4 +84,21 @@ class Helper
         }
         return $html;
     }
+
+    public static function clientMenu($data,$parent_id=0){
+        dd('1');
+    }
+
+    public static function isChild($menus,$id ){
+
+      
+        foreach($menus as $key => $menu){
+            if($menu->parent_id == $id){
+                
+                return $menus;
+            }
+            
+        }
+
+    }
 }
