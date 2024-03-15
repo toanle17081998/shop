@@ -11,15 +11,30 @@
                         aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Danh mục</a>
                     <ul class="sub-menu children dropdown-menu">
                         <li><i class="fa fa-plus"></i><a href="{{ route('admin.menu.create') }}">Thêm danh mục</a></li>
-                        <li><i class="fa fa-list"></i><a href="{{ route('admin.menu.index') }}">Danh sách danh mục</a></li>
+                        <li><i class="fa fa-list"></i><a href="{{ route('admin.menu.index') }}">Danh sách danh mục</a>
+                        </li>
                     </ul>
                 </li>
                 <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Sản phẩm</a>
+                        aria-expanded="false"> <i class="menu-icon fa fa-shopping-cart"></i>Sản phẩm</a>
                     <ul class="sub-menu children dropdown-menu">
-                        <li><i class="fa fa-plus"></i><a href="{{ route('admin.product.create') }}">Thêm sản phẩm</a></li>
-                        <li><i class="fa fa-list"></i><a href="{{ route('admin.product.index') }}">Danh sách sản phẩm</a></li>
+                        <li><i class="fa fa-plus"></i><a href="{{ route('admin.product.create') }}">Thêm sản phẩm</a>
+                        </li>
+                        <li><i class="fa fa-list"></i><a href="{{ route('admin.product.index') }}">Danh sách sản
+                                phẩm</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false"> <i class="menu-icon fa fa-film"></i>Slider</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li>
+                            <i class="fa fa-plus"></i><a href="{{ route('admin.slider.create') }}">Thêm slider</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-list"></i><a href="{{ route('admin.slider.index') }}">Danh sách slider</a>
+                        </li>
                     </ul>
                 </li>
                 <li class="menu-title">Admin</li><!-- /.menu-title -->
