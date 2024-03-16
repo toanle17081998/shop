@@ -15,6 +15,7 @@ class MenuService
                 'name' => $request->input('name'),
                 'parent_id' => $request->input('parent_id'),
                 'description' => $request->input('description'),
+                'image' => $request->input('image'),
                 'content' => $request->input('content'),
                 'active' => $request->input('active'),
                 'slug' => Str::slug($request->input('name')),
@@ -43,6 +44,7 @@ class MenuService
             $id->name = $request->input('name');
             $id->parent_id = $request->input('parent_id');
             $id->description = $request->input('description');
+            $id->image = $request->input('image');
             $id->active = $request->input('active');
             $id->content = $request->input('content');
             $id->slug = Str::slug($request->input('name'));

@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name',255);
             $table->integer('parent_id');
             $table->string('description',255);
+            $table->string('image');
             $table->longText('content');
             $table->string('slug',255)->unique();
             $table->integer('active',0);

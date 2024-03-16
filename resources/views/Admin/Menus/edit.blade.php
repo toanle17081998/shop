@@ -66,6 +66,26 @@
                                                 </span>
                                             @endif
                                         </div>
+
+                                        <div class="form-group">
+                                            <div class="mb-3">
+                                                <label for="formFile" class="form-label">Ảnh đại diện</label>
+                                                <input type="file" id="formFile" class="form-control-file uploadfile">
+                                                <input type="hidden" name="image" id="fileImg"
+                                                    value="{{ $menuCurrent->image }}">
+                                                <div class="image_show">
+                                                    <a href="{{ $menuCurrent->image }}" target="_blank">
+                                                        <img width="100px" src="{{ $menuCurrent->image }}"
+                                                            alt="{{ $menuCurrent->name }}">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            @if ($errors->has('image'))
+                                                <span class="error-message">
+                                                    {{ $errors->first('image') }}
+                                                </span>
+                                            @endif
+                                        </div>
                                         <div class="form-group">
                                             <label for="active" class="control-label mb-1">Trạng thái</label>
                                             <div class="form-check">

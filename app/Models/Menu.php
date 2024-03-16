@@ -16,5 +16,6 @@ class Menu extends Model
         'description',
         'content',
         'active',
+        'image',
     ];
 }
